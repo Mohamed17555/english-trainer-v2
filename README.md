@@ -1,13 +1,13 @@
 # English Trainer Pro
 
-## تشغيل على جهازك (الأضمن)
-1. ثبّت Node 18+ (واختياريًا yt-dlp).
-2. `node captions-server.js`
-3. افتح http://localhost:8787 — في الموقع اكتب في خانة الخادم: `/captions`
+## تشغيل على جهازك
+1. Node 18+ ثم `node captions-server.js`
+2. افتح http://localhost:8787 — في الموقع اكتب في خانة الخادم: `/captions`
 
-## نشر على الإنترنت (Render)
-1. ارفع الفولدر ده على GitHub.
-2. في render.com: New → Blueprint (أو Web Service → Docker) واختر الريبو.
-3. بعد النشر افتح رابط الموقع، واكتب في خانة الخادم: `/captions`
+## نشر على Railway
+1. ارفع الفولدر على GitHub.
+2. railway.com → New Project → Deploy from GitHub repo → اختر الريبو (يستخدم Dockerfile تلقائيًا).
+3. Settings → Networking → Generate Domain.
+4. افتح الرابط واكتب في خانة الخادم: `/captions`
 
-ملاحظة: يوتيوب كثيرًا يحجب الاستضافات السحابية؛ إن فشل الجلب استخدم اللصق اليدوي.
+ملاحظة: يوتيوب قد يحجب الاستضافات السحابية؛ إن فشل الجلب استخدم اللصق اليدوي.
