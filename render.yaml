@@ -1,0 +1,5 @@
+services:
+  - type: web
+    name: english-trainer
+    runtime: docker
+    plan: free

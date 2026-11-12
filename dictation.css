@@ -1,0 +1,66 @@
+/* ==========================================================
+   Subtitle Shadowing + Dictation
+   يستخدم نفس متغيرات الألوان والمكونات الموجودة في الموقع
+   (--card, --line, --blue, --ok, --bad, --miss ...) ولا يغيّر شيئًا منها.
+   كل الأصناف تبدأ بـ dt- لتجنب أي تعارض.
+   ========================================================== */
+
+#dictate .dt-note{font-size:13px;color:var(--muted);line-height:1.7;margin:6px 0}
+#dictate details{margin-top:12px;border:1px solid var(--line);border-radius:12px;padding:8px 12px;background:var(--bg)}
+#dictate summary{cursor:pointer;padding:6px 0;font-size:14px}
+#dictate details[open] summary{margin-bottom:8px}
+
+/* رسائل الحالة */
+.dt-msg{margin-top:8px;font-size:14px;line-height:1.8}
+.dt-warn{margin-top:8px;padding:10px 12px;border:1px solid var(--yellow);border-radius:12px;background:var(--bg);font-size:13.5px;line-height:1.8}
+
+/* أزرار الأوضاع */
+.dt-modes{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+.dt-modes button{margin:0;width:100%}
+button.ghost.on{background:var(--blue);border-color:var(--blue);color:#fff}
+
+/* مشغل الفيديو وحاجب الترجمة (في وضع الإملاء فقط) */
+.dt-mask{position:absolute;left:0;right:0;bottom:0;height:26%;background:#000;pointer-events:none;display:none;z-index:2}
+.dt-mask.on{display:block}
+
+/* الجملة الحالية */
+.dt-sent{direction:ltr;text-align:left;font-size:19px;line-height:1.8;padding:12px;margin:10px 0;border:1px dashed var(--ghost);border-radius:12px;background:var(--bg);min-height:60px}
+.dt-sent.dt-hiddenline{direction:rtl;text-align:center;color:var(--muted);font-size:15px;display:flex;align-items:center;justify-content:center}
+.dt-input{direction:ltr;text-align:left;font-size:18px;min-height:72px;margin-bottom:10px}
+
+/* شبكة أزرار التحكم */
+.dt-ctrls{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:8px}
+.dt-ctrls button{margin:0;width:100%}
+.dt-ctrls .dt-main{grid-column:1/-1}
+@media(min-width:700px){.dt-ctrls .dt-main{grid-column:auto}}
+
+/* نتيجة المقارنة */
+.dt-res{direction:ltr;text-align:left;white-space:normal}
+.dt-res .dt-head{direction:rtl;text-align:right;margin-bottom:8px;font-size:14px;line-height:1.8}
+.dt-w{display:inline-block;margin:3px 3px;padding:1px 7px;border-radius:8px;font-size:17px;line-height:1.7}
+.dt-ok{color:var(--ok);border-bottom:2px solid var(--ok)}
+.dt-bad{color:var(--bad);border-bottom:2px solid var(--bad)}
+.dt-fix{color:var(--ok);font-weight:700;border-bottom:2px solid var(--ok)}
+.dt-miss{color:var(--miss);border:1px dashed var(--miss)}
+.dt-extra{color:var(--muted);text-decoration:line-through;border-bottom:2px solid var(--muted)}
+.dt-blank{color:var(--miss);border:1px dashed var(--miss);font-family:ui-monospace,Menlo,Consolas,monospace;letter-spacing:1.5px}
+.dt-legend{direction:rtl;text-align:right;font-size:12.5px;color:var(--muted);margin-top:8px;line-height:1.9}
+.dt-full{direction:ltr;text-align:left;margin-top:8px;padding-top:8px;border-top:1px solid var(--line);font-size:16px}
+.dt-hintbox{direction:rtl;text-align:right;margin-top:8px;padding:8px 10px;border-radius:10px;border:1px solid var(--yellow);font-size:13.5px;line-height:1.8}
+
+/* قائمة الجمل */
+.dt-row{cursor:pointer}
+.dt-row .lt{font-size:16px}
+.dt-row.done{border-color:var(--green)}
+.dt-row.revealed{border-color:var(--yellow);border-style:dashed}
+.dt-row.skipped{opacity:.75}
+.dt-row .dt-sub{font-size:12px;color:var(--muted);margin-top:4px;direction:rtl;text-align:right}
+.dt-dots{color:var(--muted);letter-spacing:2px}
+
+/* التمارين المحفوظة */
+.dt-recent{display:flex;flex-direction:column;gap:8px}
+.dt-item{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:12px;padding:10px;background:var(--bg)}
+.dt-item .dt-info{flex:1;min-width:0}
+.dt-item b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;direction:ltr;text-align:start;font-size:14px}
+.dt-item span{font-size:12px;color:var(--muted)}
+.dt-item button{margin:0}
